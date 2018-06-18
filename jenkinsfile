@@ -7,10 +7,10 @@ pipeline{
       sh 'ant -f build.xml -v'
       }
     }
-    post{
-      always{
-        archiveArtifacts '**/*.jar', fingerprint: true
-      }
+    post {
+        always {
+            archiveArtifacts artifacts: '**/*.jar', fingerprint: true
+        }
     }
   }
 }
